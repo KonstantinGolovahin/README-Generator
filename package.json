@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/KonstantinGolovahin/README-Generator/issues"
   },
-  "homepage": "https://github.com/KonstantinGolovahin/README-Generator#readme"
+  "homepage": "https://github.com/KonstantinGolovahin/README-Generator#readme",
+  "dependencies": {
+    "inquirer": "^6.5.2"
+  }
 }
