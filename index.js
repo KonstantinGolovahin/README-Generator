@@ -2,6 +2,10 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+// from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba -- Add tp my README!
+const licenceMIT ="[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+const licenceGNUv3 = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+const licenceBSD3 = "![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)";
 
 // array of questions for user
 const questions = [
@@ -38,7 +42,7 @@ inquirer
             name: 'UserLicence',
             message: 'Which licence to use?',
             choices: [
-              'a', 'n', 'c', 'd',
+              'MIT', 'GNU GPL v3', 'BSD 3-Clause License', 'No licence please',
             ],
           },
         {
@@ -80,13 +84,39 @@ inquirer
             
         } = response;
 
+        // user selected licence
+       let licenceChoice = response.UserLicence[0];
+       let licenceBadge 
+      // get corresponding badge
+         switch(licenceChoice) {
+                case "MIT":
+                    licenceBadge =  licenceMIT;
+                    debugger
+                  break;
+                case "GNU GPL v3":
+                    licenceBadge =licenceGNUv3;
+                  break;
+                 case "BSD 3-Clause License":
+                    licenceBadge =licenceBSD3;
+                break;
+                default:
+                    licenceBadge ="No licence selected";
+                 
+              } 
+
+             // console.log(licenceBadge) 
+
+       
+      // licenceBadge =  licenceMIT;
+
         // literals for building a page elements
        // const mdUserTitle = `#${userTitle}`;
        // const mdUserDescription = `${userDescription}`;
        // const myLocation = `<p  style="color:red;">${userlocation}</p>`;
        // const myURL = `<a href=${userURL}> my Page</a>`;
 const mdTemplate = `
-licence badge
+
+ ${licenceBadge}
 
 \
 #  ${userTitle}
@@ -97,9 +127,9 @@ ${userDescription}
 
 ## Table of Content
 * [description](#Description)
-* [installation instructions] (#Installation)
-* [usage information] (#Usage)
-* [contribution guidelines] (#Contributing)
+* [installation instructions](#Installation)
+* [usage information](#Usage)
+* [contribution guidelines](#Contributing)
 * [test instructions](#Tests)
 
 ## Installation
@@ -112,7 +142,7 @@ ${userUsage}
 
 ## Licence
 
-Licence description
+this project is covered by licence: ${licenceChoice}
 
 ## Contributing
 
@@ -139,10 +169,8 @@ ${userTests}
     );
 
 
-    // fro mhttps://gist.github.com/lukas-h/2a5d00690736b4c3a7ba -- Add tp my README!
-    const licenceMIT ="[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
-    const licenceGNUv3 = "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
-
+    
+   
 
 
 

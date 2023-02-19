@@ -1,41 +1,39 @@
 
 
+ [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-
-licence badge
-
-#  rerer
+#  f
 
 ## Description
 
-wewewew
+f
 
 ## Table of Content
 * [description](#Description)
-* [installation instructions] (#Installation)
-* [usage information] (#Usage)
-* [contribution guidelines] (#Contributing)
+* [installation instructions](#Installation)
+* [usage information](#Usage)
+* [contribution guidelines](#Contributing)
 * [test instructions](#Tests)
 
 ## Installation
 
-wewewew
+f
 
 ## Usage
 
-wewewewewe
+f
 
 ## Licence
 
-Licence description
+this project is covered by licence: GNU GPL v3
 
 ## Contributing
 
-dfdfd
+f
 
 ## Tests
 
-dfdfdf
+f
 
 ## Questions
 
