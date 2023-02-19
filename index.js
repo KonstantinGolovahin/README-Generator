@@ -81,16 +81,60 @@ inquirer
         } = response;
 
         // literals for building a page elements
-       // const myHeader = `<h1>${username}</h1>`;
+       // const mdUserTitle = `#${userTitle}`;
+       // const mdUserDescription = `${userDescription}`;
        // const myLocation = `<p  style="color:red;">${userlocation}</p>`;
        // const myURL = `<a href=${userURL}> my Page</a>`;
+const mdTemplate = `
+licence badge
 
+\
+#  ${userTitle}
+
+## Description
+
+${userDescription}
+
+## Table of Content
+* description
+* installation instructions
+* usage information
+* contribution guidelines
+* test instructions
+
+## Installation
+
+${userInstallation}
+
+## Usage
+
+${userUsage}
+
+## Licence
+
+Licence description
+
+## Contributing
+
+${userContributing}
+
+## Tests
+
+${userTests}
+
+## Questions
+
+* Github link
+* Contact email
+
+
+`
         
 
        // // append whole HTML to a file
-       // fs.appendFile('index.html', stringHTML, (err) => {
-       //     if (err) throw err;
-       // });
+        fs.appendFile('generated_README.md', mdTemplate, (err) => {
+            if (err) throw err;
+        });
     }
     );
 
