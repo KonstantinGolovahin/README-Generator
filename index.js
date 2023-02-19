@@ -13,7 +13,7 @@ const questions = [
 ];
 
 
-
+// A list of questions to ask. Answers could be omitted
 inquirer
     .prompt([
         {
@@ -36,7 +36,7 @@ inquirer
             message: 'Usage',
             name: 'userUsage',
         },
-        // Licence should be a list of options based on a separate list and list of badges
+      
         {
             type: 'checkbox',
             name: 'UserLicence',
@@ -69,7 +69,7 @@ inquirer
 
     ])
     .then((response) => {
-        // console.log(response.username);
+        
         // destructure response object   
         const {
             userTitle,
@@ -104,16 +104,6 @@ inquirer
                  
               } 
 
-             // console.log(licenceBadge) 
-
-       
-      // licenceBadge =  licenceMIT;
-
-        // literals for building a page elements
-       // const mdUserTitle = `#${userTitle}`;
-       // const mdUserDescription = `${userDescription}`;
-       // const myLocation = `<p  style="color:red;">${userlocation}</p>`;
-       // const myURL = `<a href=${userURL}> my Page</a>`;
 const mdTemplate = `
 
  ${licenceBadge}
@@ -126,11 +116,11 @@ const mdTemplate = `
 ${userDescription}
 
 ## Table of Content
-* [description](#Description)
-* [installation instructions](#Installation)
-* [usage information](#Usage)
-* [contribution guidelines](#Contributing)
-* [test instructions](#Tests)
+* [description](#description)
+* [installation instructions](#installation)
+* [usage information](#usage)
+* [contribution guidelines](#contributing)
+* [test instructions](#tests)
 
 ## Installation
 
@@ -154,8 +144,8 @@ ${userTests}
 
 ## Questions
 
-* Github link
-* Contact email
+* Please visit my [Github](https://github.com/${userGitHub})
+* Please contact me via [email](mailto:${userEmail}) if you have any additional questions
 
 
 `
