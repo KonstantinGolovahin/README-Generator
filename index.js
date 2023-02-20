@@ -33,29 +33,29 @@ inquirer
         {
             type: 'checkbox',
             name: 'UserLicence',
-            message: 'Add licence to use:',
+            message: 'Add one licence to use:',
             choices: [
               'MIT', 'GNU GPL v3', 'BSD 3-Clause License', 'No licence please',
             ],
           },
         {
             type: 'input',
-            message: 'Contributing',
+            message: 'Contribution guidelines:',
             name: 'userContributing',
         },
         {
             type: 'input',
-            message: 'Tests',
+            message: 'Test instructions:',
             name: 'userTests',
         },
         {
             type: 'input',
-            message: 'Add GitHub username',
+            message: 'Add GitHub username:',
             name: 'userGitHub',
         },
         {
             type: 'input',
-            message: 'Add Email',
+            message: 'Add Email:',
             name: 'userEmail',
         },
 
